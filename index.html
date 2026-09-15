@@ -1,0 +1,266 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Feliz Cumpleaños, Hermano 🎂</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- PANTALLA DE INICIO -->
+    <section id="inicio" class="pantalla-inicio">
+
+        <div class="regalo">🎁</div>
+
+        <h1>TENGO UNA SORPRESA PARA TI CALULITO</h1>
+
+        <p>
+            Una pequeña sorpresa para mi gran hermano 
+        </p>
+
+        <button onclick="abrirSorpresa()">
+            Abrir sorpresa ✨
+        </button>
+
+    </section>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main id="contenido" class="contenido oculto">
+
+        <!-- PRESENTACIÓN -->
+        <section class="hero">
+
+            <div class="estrellas">
+                ✨ ⭐ ✨ ⭐ ✨
+            </div>
+
+            <div class="torta">
+                🎂
+            </div>
+
+            <h1>
+                ¡FELIZ CUMPLEAÑOS!
+            </h1>
+
+            <h2>
+                Para mi querido hermano👬
+            </h2>
+
+            <p>
+                Hoy es un día especial porque celebramos tu vida.
+            </p>
+
+        </section>
+
+
+        <!-- CARTA -->
+        <section class="carta">
+
+            <div class="sobre">
+                💌
+            </div>
+
+            <h2>
+                Una carta para ti
+            </h2>
+
+            <p>
+                Hoy es un día muy especial porque celebramos tu vida.
+                Quiero desearte un cumpleaños lleno de alegría,
+                buenos momentos y muchas razones para sonreír.
+            </p>
+
+            <p>
+                Gracias por todos los momentos compartidos,
+                por las risas, las ocurrencias y por ser parte
+                importante de mi vida.
+            </p>
+
+            <p>
+                Aunque a veces podamos discutir, siempre vas a ser
+                mi hermano y siempre podrás contar conmigo.
+            </p>
+
+            <p class="mensaje-especial">
+                Espero que todos tus sueños y metas se hagan realidad.
+                Que este nuevo año de vida venga lleno de éxitos,
+                felicidad y grandes momentos.
+            </p>
+
+            <p class="firma">
+                Con mucho cariño ❤️<br>
+                <strong>Tu hermano  Juancito</strong>
+            </p>
+
+        </section>
+
+
+        <!-- FOTOS -->
+        <section class="recuerdos">
+
+            <h2>
+                📸 RECUERDOS UNICOS
+            </h2>
+
+            <p class="subtexto">
+                Algunos momentos que siempre quedarán en nuestros recuerdos.
+                                     
+            </p>
+
+
+            <div class="galeria">
+
+                <div class="foto">
+                    <img src="imagenes/foto1.jpeg" alt="">
+                 
+                </div>
+
+                <div class="foto">
+                    <img src="imagenes/foto2.jpeg" alt="">
+                  
+                </div>
+
+                <div class="foto">
+                    <img src="imagenes/foto3.jpeg" alt="">
+                    
+                </div>
+
+                 <div class="foto">
+                    <img src="imagenes/foto4.jpeg" alt="">
+                   
+                </div>
+                  <div class="foto">
+                    <img src="imagenes/foto5.jpeg" alt="">
+                   
+                </div>
+                  <div class="foto">
+                    <img src="imagenes/foto6.jpeg" alt="">
+                   
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MENSAJE FINAL -->
+        <section class="final">
+
+            <div class="brillos">
+                ✨ ⭐ ✨
+            </div>
+
+            <h2>
+                Y recuerda...
+            </h2>
+
+            <p>
+                No importa cuántos años pasen,
+                siempre serás mi hermano
+                y una persona muy importante para mí.
+            </p>
+
+            <h1>
+                🎂 ¡FELIZ CUMPLEAÑOS, CALULITO! 🎂
+            </h1>
+
+            <button onclick="lanzarConfeti()">
+                Celebrar otra vez 🎉🍻
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- CONTENEDOR DEL CONFETI -->
+    <div id="confeti"></div>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        function abrirSorpresa() {
+
+            document.getElementById("inicio").style.display = "none";
+
+            document.getElementById("contenido")
+                .classList.remove("oculto");
+
+            lanzarConfeti();
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+
+
+        function lanzarConfeti() {
+
+            const contenedor =
+                document.getElementById("confeti");
+
+            for (let i = 0; i < 100; i++) {
+
+                const pieza =
+                    document.createElement("div");
+
+                pieza.classList.add("confeti");
+
+                pieza.style.left =
+                    Math.random() * 100 + "vw";
+
+                pieza.style.animationDelay =
+                    Math.random() * 2 + "s";
+
+                pieza.style.transform =
+                    "rotate(" +
+                    Math.random() * 360 +
+                    "deg)";
+
+
+                const colores = [
+                    "#ff4f81",
+                    "#ffd166",
+                    "#06d6a0",
+                    "#4cc9f0",
+                    "#c77dff",
+                    "#ffffff"
+                ];
+
+
+                pieza.style.backgroundColor =
+                    colores[
+                        Math.floor(
+                            Math.random() * colores.length
+                        )
+                    ];
+
+
+                contenedor.appendChild(pieza);
+
+
+                setTimeout(() => {
+
+                    pieza.remove();
+
+                }, 5000);
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+```
